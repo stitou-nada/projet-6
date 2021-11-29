@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(101, 178, 214);
+}
+section{
+    background-color: rgb(118 119 119);
+    border: rgb(255, 255, 255) 5px solid;
+    height: 171px;
+    width: 750px;
+    margin: auto;
+    text-align: center;
+    font-weight: bolder;
+}
+button{
+   background-color:rgb(101, 178, 214) ;
+}

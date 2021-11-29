@@ -8,7 +8,6 @@ var nombreDeviner;
  bouton = document.getElementById('bouton');
  sortie = document.getElementById('sortietext');
  numero = Math.floor(Math.random() * 100);
- nombreEssaye = 10;
  // traitement 
 
 bouton.addEventListener('click', function(){

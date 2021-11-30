@@ -1,29 +1,46 @@
-// declaration des variables 
-var bouton;
-var sortie;
-var numero;
+//declaration les variable
+var btn;
+var output;
+var number;
 var nombreDeviner;
-var tentative;
+var attempt;
+
  // entrer: saiser 
- bouton = document.getElementById('bouton');
- sortie = document.getElementById('sortietext');
- numero = Math.floor(Math.random() * 100);
- tentativesortie = document.getElementById('tentativ') ;
- tentative = 10 ;
- // traitement      
-bouton.addEventListener('click', function(){
- tentative--;
-  nombreDeviner = document.getElementById('entréDeUtilisateur').value;
-  if (nombreDeviner == numero){
-    sortie.innerHTML = 'Correct'
-  } else{
-    if (nombreDeviner < numero){
-        sortie.innerHTML = "le nombre est plus petit que vous avez choisir "
-    }
-    else {
-      sortie.innerHTML = "le nombre est plus grand que vous avez choisir"
+ btn = document.getElementById('btn');
+ output = document.getElementById('outputtext');
+ number = Math.floor(Math.random() * 100);
+ attemptOutPut = document.getElementById('tentative')
+ attempt =10;
+ // traitement 
+
+btn.addEventListener('click', function(){
+    attempt--;
+    nombreDeviner = document.getElementById('userInput').value;
+    if(attempt>0){
+        attemptOutPut.innerHTML=attempt +"-tentative"
+        if ( nombreDeviner == number){
+            if (nombreDeviner == number && attempt >=8 ) { 
+                output.innerHTML = 'Excellent, vous étes un Génie !!!'
+                }else{
+                if(nombreDeviner == number && attempt >=3){
+                    output.innerHTML ='Bravo, vous avez gagné après , ' +attempt +" tentative" 
+                }
+                }
+                
+          } else{
+            if ( nombreDeviner < number){
+                output.innerHTML = "le nombre que vous avez choisir est plus petit"
+            }
+            else {
+              output.innerHTML = "le nombre que vous avez choisir est plus grand"
+            }
+        
+          }
+    }else {
+        output.innerHTML = "c'est rate"
+        attemptOutPut.innerHTML= "0-tentative"
     }
 
-  } 
+  
 
 });
